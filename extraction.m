@@ -64,6 +64,7 @@ for x=1:width_portrait
         new_y = floor(newCoor(2)/s);
 
         if( 0 < new_x && new_x < width_bg && 0 < new_y && new_y < height_bg )
+            % normalement, condition inutile pour l'extraction
             Correspondance_trouvee = newCoor
 
             new_portrait(y, x, :) = bg(new_y, new_x, :);
