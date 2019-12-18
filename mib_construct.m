@@ -3,8 +3,8 @@ function [mib] = mib_construct(img)
 
     mib.image = img;
     mib.mask = ones(size(img, 1), size(img, 2));
-    mib.box.o = [1 1]; % origine (y,x)
-    mib.box.d = [size(img,1) size(img,2)]; % destination (y,x)
+    mib.box.p1 = [1 1]; % origine (y,x)
+    mib.box.p3 = [size(img,1) size(img,2)]; % destination (y,x)
 
     % box =
     %    x y
