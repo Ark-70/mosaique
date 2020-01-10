@@ -25,9 +25,8 @@ function [new_mib] = mib_apply_homography(mib, H)
 
     box2.p2 = [box2.p1(1) box2.p3(2)]; % on veut [p1.y et p3.x]
     box2.p4 = [box2.p3(1) box2.p1(2)]; % on veut [p3.y et p1.x]
-    % je vais avoir s en trop
 
-    box2.width  = round( (box2.p3(2)) - (box2.p1(2)) ); % on divise par s
+    box2.width  = round( (box2.p3(2)) - (box2.p1(2)) );
     box2.height = round( (box2.p3(1)) - (box2.p1(1)) );
     fprintf('p1 %i\n',box2.p1);
     fprintf('p2 %i\n',box2.p2);
@@ -49,7 +48,7 @@ function [new_mib] = mib_apply_homography(mib, H)
     new_mib.mask = zeros(box2.height, box2.width);
     new_mib.box.p1 = box2.p1;
     new_mib.box.p3 = box2.p3;
-    
+
     box2.p3(1:2) = round(box2.p3(1:2));
     box2.p1(1:2) = round(box2.p1(1:2));
     % box2.p3(1:2) = round([box2.p3(2) box2.p3(1)]);
@@ -60,7 +59,7 @@ function [new_mib] = mib_apply_homography(mib, H)
 
             % true_x = x si on avait fait commencer la box à (0,0), on aurait dû décaler pour avoir des vrais x correspondants à la mib d'origine
             % true_y = y
-            
+
             true_x = x+box2.p1(2); % offset
             true_y = y+box2.p1(1);
 
