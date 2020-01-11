@@ -1,4 +1,4 @@
-function [new_image] = concat_image(mib1, image2_origin, mib2)
+function [new_image] = concat_image_fading(mib1, image2_origin, mib2)
 
 DEBUG_TRANSPARENCY = false;
 

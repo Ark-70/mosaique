@@ -23,8 +23,8 @@ function [mib_fusion] = mib_fusion(mib1, mib2)
     %
     % mib_fusion.mask(p1_from_0(1):p1_from_0(1)-1+size(mib1.mask, 1), p1_from_0(2):p1_from_0(2)-1+size(mib1.mask, 2)) = mib1.mask;
     mib_fusion.mask = concat_mask(mib_fusion.mask, p1_from_0, mib1.mask);
-    mib_fusion.image = concat_image(mib_fusion.image, p1_from_0, mib1.image);
-    
+    mib_fusion.image = concat_image(mib_fusion, p1_from_0, mib1);
+
     p1_from_0(1) = floor(mib2.box.p1(1)-mib_fusion.box.p1(1))+1;
     p1_from_0(2) = floor(mib2.box.p1(2)-mib_fusion.box.p1(2))+1;
 %     p3_from_0(1) = ceil(mib2.box.p3(1)-mib_fusion.box.p1(1))+1;
@@ -36,7 +36,7 @@ function [mib_fusion] = mib_fusion(mib1, mib2)
 
 
 
-    mib_fusion.image = concat_image(mib_fusion.image, p1_from_0, mib2.image);
+    mib_fusion.debuging_image = concat_image(mib_fusion, p1_from_0, mib2);
 
 
 end
